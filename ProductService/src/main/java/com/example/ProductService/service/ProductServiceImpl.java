@@ -7,7 +7,12 @@ import com.example.ProductService.model.ProductResponse;
 import com.example.ProductService.repository.ProductRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Log4j2
@@ -55,4 +60,22 @@ public class ProductServiceImpl implements ProductService{
         }
 
     }
+
+
+@Override
+public ResponseEntity<List<Product>> getProducts() {
+            try {
+            return new ResponseEntity<>(productRepository.findAll(), HttpStatus.OK);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(),HttpStatus.BAD_REQUEST);
 }
+
+    @Override
+    public void deleteProductById(Long productId) {
+       productRepository.deleteById(productId);
+    }
+}
+
+
