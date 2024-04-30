@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/ServiceRegistry/pom.xml" />
         <option value="$PROJECT_DIR$/../PaymentModeService/pom.xml" />
         <option value="$PROJECT_DIR$/PaymentModeService/pom.xml" />
+        <option value="$PROJECT_DIR$/../CloudGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/CloudGateway/pom.xml" />
       </list>
     </option>
   </component>
