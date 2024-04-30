@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: Order-Service
+          uri: lb://ORDERSERVICE
+          predicates:
+            - Path=/order/**
+        - id: Product-Service
+          uri: lb://PRODUCTSERVICE
+          predicates:
+            - Path=/product/**
+        - id: PaymentMode-Service
+          uri: lb://PAYMENTMODESERVICE
+          predicates:
+            - Path=/payment/**
+
